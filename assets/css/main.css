@@ -66,7 +66,7 @@ a:hover {
 }
 
 .bg-gray {
-  background: #f2f3f3 !important;
+  background: #d2d5e5 !important;
 }
 
 .bg-white {
@@ -205,14 +205,14 @@ a:hover {
 
 .nav {
   /* background: #0d1452; */
-  background: #232f3e;
+  background: #2875d7;
 }
 
 .menu-container {
   width: 100%;
   margin: 0 auto;
   /* background: #0d1452; */
-  background: #232f3e;
+  background: #2875d7;
 }
 
 .menu-mobile {

@@ -209,22 +209,56 @@ if(isset($_POST['form1'])) {
 								</select>
 							</div>
 						</div>
+
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">Mid Level Category Name <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="mcat_id" class="form-control select2 mid-cat">
 									<option value="">Select Mid Level Category</option>
+                                  <!--  add code   -->
+								  <?php
+									$statement = $pdo->prepare("SELECT * FROM tbl_mid_category ORDER BY mcat_name ASC");
+									$statement->execute();
+									$result = $statement->fetchAll(PDO::FETCH_ASSOC);	
+									foreach ($result as $row) {
+										?>
+										<option value="<?php echo $row['tcat_id']; ?>"><?php echo $row['mcat_name']; ?></option>
+										<?php
+									}
+									?>
+
 								</select>
 							</div>
 						</div>
+
+
+
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">End Level Category Name <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="ecat_id" class="form-control select2 end-cat">
 									<option value="">Select End Level Category</option>
-								</select>
-							</div>
-						</div>
+
+									
+								<?php
+									$statement = $pdo->prepare("SELECT * FROM tbl_end_category ORDER BY ecat_name ASC");
+									$statement->execute();
+									$result = $statement->fetchAll(PDO::FETCH_ASSOC);	
+									foreach ($result as $row) {
+										?>
+										<option value="<?php echo $row['mcat_id']; ?>"><?php echo $row['ecat_name']; ?></option>
+										<?php
+									}
+									?>
+
+							    </select>
+
+						    </div>
+					    </div>
+
+						<!-- addd code  end category -->
+					
+
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">Product Name <span>*</span></label>
 							<div class="col-sm-4">
@@ -232,13 +266,13 @@ if(isset($_POST['form1'])) {
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Old Price <br><span style="font-size:10px;font-weight:normal;">(In USD)</span></label>
+							<label for="" class="col-sm-3 control-label">Old Price <br><span style="font-size:10px;font-weight:normal;">(K)</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_old_price" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Current Price <span>*</span><br><span style="font-size:10px;font-weight:normal;">(In USD)</span></label>
+							<label for="" class="col-sm-3 control-label">Current Price <span>*</span><br><span style="font-size:10px;font-weight:normal;">(K)</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_current_price" class="form-control">
 							</div>
