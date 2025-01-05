@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_color` (
   `color_id` int(11) NOT NULL,
-  `color_name` varchar(255) NOT NULL
+  `color_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -362,7 +362,7 @@ CREATE TABLE `tbl_customer` (
   `cust_s_state` varchar(100) NOT NULL,
   `cust_s_zip` varchar(30) NOT NULL,
   `cust_password` varchar(100) NOT NULL,
-  `cust_token` varchar(255) NOT NULL,
+  `cust_token` varchar(100) NOT NULL,
   `cust_datetime` varchar(100) NOT NULL,
   `cust_timestamp` varchar(100) NOT NULL,
   `cust_status` int(1) NOT NULL
@@ -392,7 +392,7 @@ INSERT INTO `tbl_customer` (`cust_id`, `cust_name`, `cust_cname`, `cust_email`, 
 
 CREATE TABLE `tbl_customer_message` (
   `customer_message_id` int(11) NOT NULL,
-  `subject` varchar(255) NOT NULL,
+  `subject` varchar(100) NOT NULL,
   `message` text NOT NULL,
   `order_detail` text NOT NULL,
   `cust_id` int(11) NOT NULL
@@ -406,7 +406,7 @@ CREATE TABLE `tbl_customer_message` (
 
 CREATE TABLE `tbl_end_category` (
   `ecat_id` int(11) NOT NULL,
-  `ecat_name` varchar(255) NOT NULL,
+  `ecat_name` varchar(100) NOT NULL,
   `mcat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -502,7 +502,7 @@ INSERT INTO `tbl_end_category` (`ecat_id`, `ecat_name`, `mcat_id`) VALUES
 
 CREATE TABLE `tbl_faq` (
   `faq_id` int(11) NOT NULL,
-  `faq_title` varchar(255) NOT NULL,
+  `faq_title` varchar(100) NOT NULL,
   `faq_content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -525,7 +525,7 @@ INSERT INTO `tbl_faq` (`faq_id`, `faq_title`, `faq_content`) VALUES
 
 CREATE TABLE `tbl_language` (
   `lang_id` int(11) NOT NULL,
-  `lang_name` varchar(255) NOT NULL,
+  `lang_name` varchar(100) NOT NULL,
   `lang_value` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -706,7 +706,7 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 
 CREATE TABLE `tbl_mid_category` (
   `mcat_id` int(11) NOT NULL,
-  `mcat_name` varchar(255) NOT NULL,
+  `mcat_name` varchar(100) NOT NULL,
   `tcat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -740,12 +740,12 @@ INSERT INTO `tbl_mid_category` (`mcat_id`, `mcat_name`, `tcat_id`) VALUES
 CREATE TABLE `tbl_order` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
   `size` varchar(100) NOT NULL,
   `color` varchar(100) NOT NULL,
   `quantity` varchar(50) NOT NULL,
   `unit_price` varchar(50) NOT NULL,
-  `payment_id` varchar(255) NOT NULL
+  `payment_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -767,35 +767,35 @@ INSERT INTO `tbl_order` (`id`, `product_id`, `product_name`, `size`, `color`, `q
 
 CREATE TABLE `tbl_page` (
   `id` int(11) NOT NULL,
-  `about_title` varchar(255) NOT NULL,
+  `about_title` varchar(100) NOT NULL,
   `about_content` text NOT NULL,
-  `about_banner` varchar(255) NOT NULL,
-  `about_meta_title` varchar(255) NOT NULL,
+  `about_banner` varchar(100) NOT NULL,
+  `about_meta_title` varchar(100) NOT NULL,
   `about_meta_keyword` text NOT NULL,
   `about_meta_description` text NOT NULL,
-  `faq_title` varchar(255) NOT NULL,
-  `faq_banner` varchar(255) NOT NULL,
-  `faq_meta_title` varchar(255) NOT NULL,
+  `faq_title` varchar(100) NOT NULL,
+  `faq_banner` varchar(100) NOT NULL,
+  `faq_meta_title` varchar(100) NOT NULL,
   `faq_meta_keyword` text NOT NULL,
   `faq_meta_description` text NOT NULL,
-  `blog_title` varchar(255) NOT NULL,
-  `blog_banner` varchar(255) NOT NULL,
-  `blog_meta_title` varchar(255) NOT NULL,
+  `blog_title` varchar(100) NOT NULL,
+  `blog_banner` varchar(100) NOT NULL,
+  `blog_meta_title` varchar(100) NOT NULL,
   `blog_meta_keyword` text NOT NULL,
   `blog_meta_description` text NOT NULL,
-  `contact_title` varchar(255) NOT NULL,
-  `contact_banner` varchar(255) NOT NULL,
-  `contact_meta_title` varchar(255) NOT NULL,
+  `contact_title` varchar(100) NOT NULL,
+  `contact_banner` varchar(100) NOT NULL,
+  `contact_meta_title` varchar(100) NOT NULL,
   `contact_meta_keyword` text NOT NULL,
   `contact_meta_description` text NOT NULL,
-  `pgallery_title` varchar(255) NOT NULL,
-  `pgallery_banner` varchar(255) NOT NULL,
-  `pgallery_meta_title` varchar(255) NOT NULL,
+  `pgallery_title` varchar(100) NOT NULL,
+  `pgallery_banner` varchar(100) NOT NULL,
+  `pgallery_meta_title` varchar(100) NOT NULL,
   `pgallery_meta_keyword` text NOT NULL,
   `pgallery_meta_description` text NOT NULL,
-  `vgallery_title` varchar(255) NOT NULL,
-  `vgallery_banner` varchar(255) NOT NULL,
-  `vgallery_meta_title` varchar(255) NOT NULL,
+  `vgallery_title` varchar(100) NOT NULL,
+  `vgallery_banner` varchar(100) NOT NULL,
+  `vgallery_meta_title` varchar(100) NOT NULL,
   `vgallery_meta_keyword` text NOT NULL,
   `vgallery_meta_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -816,10 +816,10 @@ INSERT INTO `tbl_page` (`id`, `about_title`, `about_content`, `about_banner`, `a
 CREATE TABLE `tbl_payment` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
-  `customer_name` varchar(255) NOT NULL,
-  `customer_email` varchar(255) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `customer_email` varchar(100) NOT NULL,
   `payment_date` varchar(50) NOT NULL,
-  `txnid` varchar(255) NOT NULL,
+  `txnid` varchar(100) NOT NULL,
   `paid_amount` int(11) NOT NULL,
   `card_number` varchar(50) NOT NULL,
   `card_cvv` varchar(10) NOT NULL,
@@ -829,7 +829,7 @@ CREATE TABLE `tbl_payment` (
   `payment_method` varchar(20) NOT NULL,
   `payment_status` varchar(25) NOT NULL,
   `shipping_status` varchar(20) NOT NULL,
-  `payment_id` varchar(255) NOT NULL
+  `payment_id` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -851,8 +851,8 @@ INSERT INTO `tbl_payment` (`id`, `customer_id`, `customer_name`, `customer_email
 
 CREATE TABLE `tbl_photo` (
   `id` int(11) NOT NULL,
-  `caption` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL
+  `caption` varchar(100) NOT NULL,
+  `photo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -875,14 +875,14 @@ INSERT INTO `tbl_photo` (`id`, `caption`, `photo`) VALUES
 
 CREATE TABLE `tbl_post` (
   `post_id` int(11) NOT NULL,
-  `post_title` varchar(255) NOT NULL,
-  `post_slug` varchar(255) NOT NULL,
+  `post_title` varchar(100) NOT NULL,
+  `post_slug` varchar(100) NOT NULL,
   `post_content` text NOT NULL,
-  `post_date` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL,
+  `post_date` varchar(100) NOT NULL,
+  `photo` varchar(100) NOT NULL,
   `category_id` int(11) NOT NULL,
   `total_view` int(11) NOT NULL,
-  `meta_title` varchar(255) NOT NULL,
+  `meta_title` varchar(100) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -912,11 +912,11 @@ INSERT INTO `tbl_post` (`post_id`, `post_title`, `post_slug`, `post_content`, `p
 
 CREATE TABLE `tbl_product` (
   `p_id` int(11) NOT NULL,
-  `p_name` varchar(255) NOT NULL,
+  `p_name` varchar(100) NOT NULL,
   `p_old_price` varchar(10) NOT NULL,
   `p_current_price` varchar(10) NOT NULL,
   `p_qty` int(10) NOT NULL,
-  `p_featured_photo` varchar(255) NOT NULL,
+  `p_featured_photo` varchar(100) NOT NULL,
   `p_description` text NOT NULL,
   `p_short_description` text NOT NULL,
   `p_feature` text NOT NULL,
@@ -948,7 +948,7 @@ INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `
 (95, 'Bose QuietComfort 45 Bluetooth Wireless Headphones', '329', '279', 52, 'product-featured-95.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">The first noise cancelling headphones are back, with world-class quiet, lightweight materials, and proprietary technology for deep, clear sound. Bose QuietComfort 45 headphones arenâ€™t just an icon reborn â€“ theyâ€™re the perfect balance of quiet, comfort, and sound. Plus, everything that made the first around ear headphones an icon is still here. Just refined. Like an updated design with smooth cushions and a clean look. Plush synthetic leather, impact-resistant glass-filled nylon, and cast-metal hinges were all selected for their comfort as well as their durability. Add in minimal clamping force, and youâ€™ll almost forget youâ€™re wearing Bluetooth wireless noise cancelling headphones.</span><br></p>', 'Iconic, Quiet, Comfort and Sound.', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Noise cancelling wireless headphones â€“ The perfect balance of quiet, comfort, and sound. Bose uses tiny mics to measure, compare, and react to outside noise, cancelling it with opposite signals.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">High-fidelity audio â€“ The TriPort acoustic architecture offers depth and fullness. Volume-optimized Active EQ maintains balanced performance at any volume, so bass stays consistent when turned down and the music remains clear when turned up.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Quiet and Aware Modes â€“ Choose Quiet Mode for full noise cancelling, or Aware Mode to bring the outside into the around ear headphones and hear your environment and your music at the same time.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Over ear headphones â€“ These comfortable wireless headphones are suitable for all-day wear. Crafted with plush synthetic leather and impact-resistant nylon, and designed with minimal clamping force, theyâ€™re as luxurious as they are durable.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Up to 24 hours battery life â€“ Enjoy 24 hours of battery life from a single charge. A quick 15-minute charge offers 3 hours when youâ€™re on the go, or plug in the included audio cable to listen for even longer in wired mode.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Around ear headphones charge via USB-C â€“ Headphones charge via the included USB-C cable.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Bluetooth wireless noise cancelling headphones â€“ These headphones are optimized for a strong, reliable Bluetooth connection within 30 feet of the paired device.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Bose Music app â€“ The app walks you through guided setup of your over ear headphones, making it easy to get started. Plus, access adjustable noise cancellation settings, manage your Bluetooth connections, enable shortcuts, and more.</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 12, 1, 1, 62),
 (96, 'Men\'s Loose Fit Heavyweight Long-Sleeve Pocket T-Shirt', '29', '23', 102, 'product-featured-96.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">Since 1889, Carhartt has made durable workwear you can count on as you tackle the toughest jobs. This men\'s long-sleeve t-shirt bears our logo proudly on the chest pocket. It\'s made of heavyweight cotton jersey and cut generously for a roomy fit.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">100% cotton (fiber content varies by color)</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">100% cotton (fiber content varies by color)</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Rib-knit crewneck and cuffs</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Left-chest pocket with sewn on Carhartt label</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose Fit t-shirts are cut larger with a roomier fit in the chest and shoulders</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose Fit, previously known as Original Fit, is a label update in name only.&nbsp; Loose and Original size and fit remains the same. Stock may vary in labeling</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Previous Product Name: K126 Workwear Pocket Long-Sleeve T-shirt</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a&nbsp;</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">&nbsp;in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 12, 1, 1, 20),
 (97, 'Women\'s Tea Length Dress with Rosette Detail (Petite & Regular)', '87', '67', 53, 'product-featured-97.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">Our t-length party dress has a solid stretch top, full soutache sequin skirt and tie belt that is perfect for any evening event.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Short-sleeve v-neck midi blue dress</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Sequin detail</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">This style is available in Regular and Plus Size on Amazon.com</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Center back zip</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Joanna Chen design</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Short-sleeve v-neck midi blue dress</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 13, 1, 1, 32),
-(98, 'Women\'s Fuzzy Fleece Lapel Open Front Long Cardigan Coat', '52', '43', 41, 'product-featured-98.jpg', '<h3 class=\"a-spacing-mini\" style=\"padding: 0px; margin-top: 0px; margin-right: 0px; margin-left: 0px; text-rendering: optimizelegibility; font-weight: bold; font-size: 17px; line-height: 1.255; font-family: \"Amazon Ember\", Arial, sans-serif; color: rgb(15, 17, 17); margin-bottom: 6px !important;\">Design Details - Women Fuzzy Winter Teddy Coat</h3><p class=\"a-spacing-base\" style=\"padding: 0px; color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; margin-bottom: 14px !important;\"></p><ul class=\"a-unordered-list a-vertical\" style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Material:</span>Â 85% Cotton + 15% Spandex. This women\'s teddy coat is 100% brand new and high quality!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Style:</span>Â Causal, Long Sleeves, Knee Length, Fuzzy, Faux Fur, Lapel, Open Front, this women\'s teddy coat can be both chic and warm.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Occasion:</span>Â Spring, Fall, Winter, Work, Date, Vacation, Daily Casual, At Home . This women\'s faux fur coat is suitable for both formal and casual occasions.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Package include:</span>Â 1 Womens Fuzzy Coat</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">KINDLY NOTE: Different body types may have different fit from the model pictures, please refer to customer review images for more fitting information.</span></span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">KINDLY NOTE: this item is designed to be open front and has no button or zipper closure. Please take it into consideration before purchase.</span></span></li></ul>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Material:85% Polyester; 15% Spandex. 100% brand new and high quality!</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">No closure closure</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Material:85% Polyester; 15% Spandex. 100% brand new and high quality!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Style: Causal, Long Sleeves, Knee Length, Fuzzy, Faux Fur, Lapel, Open Front</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Occasion: Spring, Fall, Winter, Work, Date, Vacation, Daily Casual, At Home</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Pair with: This women\'s coat goes perfect with a shirt/sweater & jeans/leggings/palazoo pants underneath and with short boots.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">KINDLY NOTE: Different body types may have different fit from the model pictures, please refer to customer review images for more fitting information.</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 2, 1, 1, 15);
+(98, 'Women\'s Fuzzy Fleece Lapel Open Front Long Cardigan Coat', '52', '43', 41, 'product-featured-98.jpg', '<h3 class=\"a-spacing-mini\" style=\"padding: 0px; margin-top: 0px; margin-right: 0px; margin-left: 0px; text-rendering: optimizelegibility; font-weight: bold; font-size: 17px; line-height: 1.100; font-family: \"Amazon Ember\", Arial, sans-serif; color: rgb(15, 17, 17); margin-bottom: 6px !important;\">Design Details - Women Fuzzy Winter Teddy Coat</h3><p class=\"a-spacing-base\" style=\"padding: 0px; color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; margin-bottom: 14px !important;\"></p><ul class=\"a-unordered-list a-vertical\" style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Material:</span>Â 85% Cotton + 15% Spandex. This women\'s teddy coat is 100% brand new and high quality!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Style:</span>Â Causal, Long Sleeves, Knee Length, Fuzzy, Faux Fur, Lapel, Open Front, this women\'s teddy coat can be both chic and warm.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Occasion:</span>Â Spring, Fall, Winter, Work, Date, Vacation, Daily Casual, At Home . This women\'s faux fur coat is suitable for both formal and casual occasions.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Package include:</span>Â 1 Womens Fuzzy Coat</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">KINDLY NOTE: Different body types may have different fit from the model pictures, please refer to customer review images for more fitting information.</span></span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">KINDLY NOTE: this item is designed to be open front and has no button or zipper closure. Please take it into consideration before purchase.</span></span></li></ul>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Material:85% Polyester; 15% Spandex. 100% brand new and high quality!</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">No closure closure</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Material:85% Polyester; 15% Spandex. 100% brand new and high quality!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Style: Causal, Long Sleeves, Knee Length, Fuzzy, Faux Fur, Lapel, Open Front</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Occasion: Spring, Fall, Winter, Work, Date, Vacation, Daily Casual, At Home</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Pair with: This women\'s coat goes perfect with a shirt/sweater & jeans/leggings/palazoo pants underneath and with short boots.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">KINDLY NOTE: Different body types may have different fit from the model pictures, please refer to customer review images for more fitting information.</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 2, 1, 1, 15);
 INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `p_qty`, `p_featured_photo`, `p_description`, `p_short_description`, `p_feature`, `p_condition`, `p_return_policy`, `p_total_view`, `p_is_featured`, `p_is_active`, `ecat_id`) VALUES
 (99, 'Oculus Quest 2 - Advanced All-In-One Virtual Reality Headset', '512', '495', 46, 'product-featured-99.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">Oculus quest 2 is our most advanced all-in-one VR system yet. Every detail has been engineered to make virtual worlds adapt to your movements, letting you explore awe-inspiring games and experiences with unparalleled freedom. No PC or Console required. Get the most out of each moment with blazing-fast performance and next-generation graphics. Stay focused with a stunning display that features 50% more pixels than the original quest. Or take a break from the action and grab front-row seats to live concerts, exclusive events and more. The redesigned touch controllers feature improved ergonomics and intuitive controls that transport your gestures, motions and actions directly into VR. You can even connect your VR headset to a gaming-compatible computer with an Oculus Link cable to access hundreds of PC VR games and experiences. Quest 2 also lets you bring your friends into the action. With live casting, you can share your VR experience with people around you. Or meet up with friends in virtual worlds to battle in multiplayer competitions or just spend some time together. With Oculus quest 2, there\'s no end in sight to what you can play, create and discover in virtual reality.</span><br></p>', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\"><span id=\"productTitle\" class=\"a-size-large product-title-word-break\" style=\"text-rendering: optimizelegibility; word-break: break-word; line-height: 32px !important; font-family: Roboto;\">Advanced All-In-One Virtual Reality Headset</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Next-level Hardware - Make every move count with a blazing-fast processor and our highest-resolution display</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">All-In-One Gaming - With backward compatibility, you can explore new titles and old favorites in the expansive Quest content library</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Immersive Entertainment - Get the best seat in the house to live concerts, groundbreaking films, exclusive events and more</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Easy Setup - Just open the box, set up with the smartphone app and jump into VR. No PC or console needed. Requires wireless internet access and the Oculus app (free download) to set up device</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Premium Display - Catch every detail with a stunning display that features 50% more pixels than the original Quest</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Ultimate Control - Redesigned Oculus Touch controllers transport your movements directly into VR with intuitive controls</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">PC VR Compatible - Step into incredible Oculus Rift titles by connecting an Oculus Link cable to a compatible gaming PC. Oculus Link Cable sold separately</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">3D Cinematic Sound - Hear in all directions with built-in speakers that deliver cinematic 3D positional audio</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a&nbsp;</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">&nbsp;in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 0, 1, 1, 61),
 (100, 'Men\'s Long Cuffed Jogger Yoga Sweat Pant', '105', '95', 78, 'product-featured-100.jpg', '<p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">We warmly welcome you to our \"Long\" Mens Cuffed Perfection Yoga Pant - our most exciting product launch of the year -&nbsp;<span style=\"font-weight: 700;\">and voted \"Favorite Yoga Pant\" by Instructors in YOGA JOURNAL magazine! (Spring/2015)</span></p><p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">It\'s FORM &amp; FASHION -&nbsp;<span style=\"font-weight: 700;\">you\'ll transition to errands in style!</span></p><p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">Please notice in the pictures, the fabric paneling in the upper leg area&nbsp;<span style=\"font-weight: 700;\">that allows for complete expansion of the crotch area in ALL directions.</span>&nbsp;It is simply perfect for Yoga, pilates, lounging, the gym &amp; running errands!</p><p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">Relaxed elastic waist band with 1/4\" drawcord in contrasting White with super light-weight metal tips (they will NOT clang in the dryer).</p><p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">2x1 rib cuffing at the bottom will&nbsp;<span style=\"font-weight: 700;\">keep your pants \"in place\"</span>&nbsp;for those inversions and hand stands!</p><p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\"><span style=\"font-weight: 700;\">DEEP pockets</span>&nbsp;that are sewn on top of the garment so they do not \"float.\" The pockets are 6.5\" deep to the side-seam so they can encase your large cell phones!</p><p style=\"padding: 0px; margin-top: 0em; margin-bottom: 1em; margin-left: 1em; color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">The rib piping extends&nbsp;<span style=\"font-weight: 700;\">uninterrupted</span>&nbsp;from the side of the pant to the back of the rear -&nbsp;<span style=\"font-weight: 700;\">providing amazing flexibility &amp; stability for stretching and rigorous activity.</span></p>', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\"><span id=\"productTitle\" class=\"a-size-large product-title-word-break\" style=\"text-rendering: optimizelegibility; word-break: break-word; line-height: 32px !important;\">Long Cuffed Jogger Pants</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Proudly brought to you by 4-rth: over 10 years in business from LA, California. Designed, manufactured &amp; shipped from Los Angeles, CA.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Fabric strips in the upper leg allow for complete expansion of the crotch area in ALL directions.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Made from our Custom MODAL French-Terry fabric from the sustainable Birch Tree wood.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Cuff at the bottom is form-fitting, yet relaxed. IDEAL for all Yoga styles - Ashtanga, Bikram, Hatha, Hot - as well as Pilates, Tennis &amp; Soccer!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">MODEL: 6\'2, 175lbs. Size: M. (See Product Description for specific SIZE guidelines!) Please IGNORE the \"size chart\" above!!</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a&nbsp;</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">&nbsp;in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 3, 0, 1, 18),
@@ -1067,7 +1067,7 @@ INSERT INTO `tbl_product_color` (`id`, `color_id`, `p_id`) VALUES
 
 CREATE TABLE `tbl_product_photo` (
   `pp_id` int(11) NOT NULL,
-  `photo` varchar(255) NOT NULL,
+  `photo` varchar(100) NOT NULL,
   `p_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1213,7 +1213,7 @@ INSERT INTO `tbl_product_size` (`id`, `size_id`, `p_id`) VALUES
 (252, 1, 78),
 (253, 2, 78),
 (254, 3, 78),
-(255, 4, 78),
+(100, 4, 78),
 (256, 5, 78),
 (259, 26, 80),
 (262, 3, 82),
@@ -1333,9 +1333,9 @@ CREATE TABLE `tbl_rating` (
 
 CREATE TABLE `tbl_service` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
-  `photo` varchar(255) NOT NULL
+  `photo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1358,17 +1358,17 @@ INSERT INTO `tbl_service` (`id`, `title`, `content`, `photo`) VALUES
 
 CREATE TABLE `tbl_settings` (
   `id` int(11) NOT NULL,
-  `logo` varchar(255) NOT NULL,
-  `favicon` varchar(255) NOT NULL,
+  `logo` varchar(100) NOT NULL,
+  `favicon` varchar(100) NOT NULL,
   `footer_about` text NOT NULL,
   `footer_copyright` text NOT NULL,
   `contact_address` text NOT NULL,
-  `contact_email` varchar(255) NOT NULL,
-  `contact_phone` varchar(255) NOT NULL,
-  `contact_fax` varchar(255) NOT NULL,
+  `contact_email` varchar(100) NOT NULL,
+  `contact_phone` varchar(100) NOT NULL,
+  `contact_fax` varchar(50) NOT NULL,
   `contact_map_iframe` text NOT NULL,
-  `receive_email` varchar(255) NOT NULL,
-  `receive_email_subject` varchar(255) NOT NULL,
+  `receive_email` varchar(50) NOT NULL,
+  `receive_email_subject` varchar(50) NOT NULL,
   `receive_email_thank_you_message` text NOT NULL,
   `forget_password_message` text NOT NULL,
   `total_recent_post_footer` int(10) NOT NULL,
@@ -1381,35 +1381,35 @@ CREATE TABLE `tbl_settings` (
   `meta_title_home` text NOT NULL,
   `meta_keyword_home` text NOT NULL,
   `meta_description_home` text NOT NULL,
-  `banner_login` varchar(255) NOT NULL,
-  `banner_registration` varchar(255) NOT NULL,
-  `banner_forget_password` varchar(255) NOT NULL,
-  `banner_reset_password` varchar(255) NOT NULL,
-  `banner_search` varchar(255) NOT NULL,
-  `banner_cart` varchar(255) NOT NULL,
-  `banner_checkout` varchar(255) NOT NULL,
-  `banner_product_category` varchar(255) NOT NULL,
-  `banner_blog` varchar(255) NOT NULL,
-  `cta_title` varchar(255) NOT NULL,
+  `banner_login` varchar(100) NOT NULL,
+  `banner_registration` varchar(100) NOT NULL,
+  `banner_forget_password` varchar(100) NOT NULL,
+  `banner_reset_password` varchar(100) NOT NULL,
+  `banner_search` varchar(100) NOT NULL,
+  `banner_cart` varchar(100) NOT NULL,
+  `banner_checkout` varchar(100) NOT NULL,
+  `banner_product_category` varchar(100) NOT NULL,
+  `banner_blog` varchar(100) NOT NULL,
+  `cta_title` varchar(100) NOT NULL,
   `cta_content` text NOT NULL,
-  `cta_read_more_text` varchar(255) NOT NULL,
-  `cta_read_more_url` varchar(255) NOT NULL,
-  `cta_photo` varchar(255) NOT NULL,
-  `featured_product_title` varchar(255) NOT NULL,
-  `featured_product_subtitle` varchar(255) NOT NULL,
-  `latest_product_title` varchar(255) NOT NULL,
-  `latest_product_subtitle` varchar(255) NOT NULL,
-  `popular_product_title` varchar(255) NOT NULL,
-  `popular_product_subtitle` varchar(255) NOT NULL,
-  `testimonial_title` varchar(255) NOT NULL,
-  `testimonial_subtitle` varchar(255) NOT NULL,
-  `testimonial_photo` varchar(255) NOT NULL,
-  `blog_title` varchar(255) NOT NULL,
-  `blog_subtitle` varchar(255) NOT NULL,
+  `cta_read_more_text` varchar(100) NOT NULL,
+  `cta_read_more_url` varchar(100) NOT NULL,
+  `cta_photo` varchar(100) NOT NULL,
+  `featured_product_title` varchar(100) NOT NULL,
+  `featured_product_subtitle` varchar(100) NOT NULL,
+  `latest_product_title` varchar(100) NOT NULL,
+  `latest_product_subtitle` varchar(100) NOT NULL,
+  `popular_product_title` varchar(100) NOT NULL,
+  `popular_product_subtitle` varchar(100) NOT NULL,
+  `testimonial_title` varchar(100) NOT NULL,
+  `testimonial_subtitle` varchar(100) NOT NULL,
+  `testimonial_photo` varchar(100) NOT NULL,
+  `blog_title` varchar(100) NOT NULL,
+  `blog_subtitle` varchar(100) NOT NULL,
   `newsletter_text` text NOT NULL,
-  `paypal_email` varchar(255) NOT NULL,
-  `stripe_public_key` varchar(255) NOT NULL,
-  `stripe_secret_key` varchar(255) NOT NULL,
+  `paypal_email` varchar(100) NOT NULL,
+  `stripe_public_key` varchar(100) NOT NULL,
+  `stripe_secret_key` varchar(100) NOT NULL,
   `bank_detail` text NOT NULL,
   `before_head` text NOT NULL,
   `after_body` text NOT NULL,
@@ -1485,7 +1485,7 @@ INSERT INTO `tbl_shipping_cost_all` (`sca_id`, `amount`) VALUES
 
 CREATE TABLE `tbl_size` (
   `size_id` int(11) NOT NULL,
-  `size_name` varchar(255) NOT NULL
+  `size_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1549,12 +1549,12 @@ INSERT INTO `tbl_size` (`size_id`, `size_name`) VALUES
 
 CREATE TABLE `tbl_slider` (
   `id` int(11) NOT NULL,
-  `photo` varchar(255) NOT NULL,
-  `heading` varchar(255) NOT NULL,
+  `photo` varchar(100) NOT NULL,
+  `heading` varchar(100) NOT NULL,
   `content` text NOT NULL,
-  `button_text` varchar(255) NOT NULL,
-  `button_url` varchar(255) NOT NULL,
-  `position` varchar(255) NOT NULL
+  `button_text` varchar(100) NOT NULL,
+  `button_url` varchar(100) NOT NULL,
+  `position` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1575,7 +1575,7 @@ INSERT INTO `tbl_slider` (`id`, `photo`, `heading`, `content`, `button_text`, `b
 CREATE TABLE `tbl_social` (
   `social_id` int(11) NOT NULL,
   `social_name` varchar(30) NOT NULL,
-  `social_url` varchar(255) NOT NULL,
+  `social_url` varchar(100) NOT NULL,
   `social_icon` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1609,10 +1609,10 @@ INSERT INTO `tbl_social` (`social_id`, `social_name`, `social_url`, `social_icon
 
 CREATE TABLE `tbl_subscriber` (
   `subs_id` int(11) NOT NULL,
-  `subs_email` varchar(255) NOT NULL,
+  `subs_email` varchar(100) NOT NULL,
   `subs_date` varchar(100) NOT NULL,
   `subs_date_time` varchar(100) NOT NULL,
-  `subs_hash` varchar(255) NOT NULL,
+  `subs_hash` varchar(100) NOT NULL,
   `subs_active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1636,7 +1636,7 @@ INSERT INTO `tbl_subscriber` (`subs_id`, `subs_email`, `subs_date`, `subs_date_t
 
 CREATE TABLE `tbl_top_category` (
   `tcat_id` int(11) NOT NULL,
-  `tcat_name` varchar(255) NOT NULL,
+  `tcat_name` varchar(100) NOT NULL,
   `show_on_menu` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1660,10 +1660,10 @@ INSERT INTO `tbl_top_category` (`tcat_id`, `tcat_name`, `show_on_menu`) VALUES
 CREATE TABLE `tbl_user` (
   `id` int(10) NOT NULL,
   `full_name` varchar(100) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `phone` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `photo` varchar(100) NOT NULL,
   `role` varchar(30) NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1684,7 +1684,7 @@ INSERT INTO `tbl_user` (`id`, `full_name`, `email`, `phone`, `password`, `photo`
 
 CREATE TABLE `tbl_video` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `iframe_code` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
