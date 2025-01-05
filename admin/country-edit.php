@@ -22,7 +22,7 @@ if(isset($_POST['form1'])) {
     	$total = $statement->rowCount();							
     	if($total) {
     		$valid = 0;
-        	$error_message .= 'Country name already exists<br>';
+        	$error_message .= 'City name already exists<br>';
     	}
     }
 
@@ -31,7 +31,7 @@ if(isset($_POST['form1'])) {
 		$statement = $pdo->prepare("UPDATE tbl_country SET country_name=? WHERE country_id=?");
 		$statement->execute(array($_POST['country_name'],$_REQUEST['id']));
 
-    	$success_message = 'Country is updated successfully.';
+    	$success_message = 'City is updated successfully.';
     }
 }
 ?>

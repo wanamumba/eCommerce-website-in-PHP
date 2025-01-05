@@ -2,7 +2,7 @@
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View Countries</h1>
+		<h1>View Cities</h1>
 	</div>
 	<div class="content-header-right">
 		<a href="country-add.php" class="btn btn-primary btn-sm">Add New</a>
@@ -23,7 +23,7 @@
 			<thead>
 			    <tr>
 			        <th>#</th>
-			        <th>Country Name</th>
+			        <th>City Name</th>
 			        <th>Action</th>
 			    </tr>
 			</thead>

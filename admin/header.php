@@ -104,7 +104,7 @@ if(!isset($_SESSION['user'])) {
 
   <li class="treeview <?php if( ($cur_page == 'product.php') || ($cur_page == 'product-add.php') || ($cur_page == 'product-edit.php') ) {echo 'active';} ?>">
                         <a href="product.php">
-                            <i class="fa fa-shopping-bag"></i> <span>Product Management</span>
+                            <i class="fa fa-shopping-bag"></i> <span>Bakery Items Management</span>
                         </a>
                     </li>
 
@@ -118,14 +118,14 @@ if(!isset($_SESSION['user'])) {
 
  <li class="treeview <?php if( ($cur_page == 'service.php') ) {echo 'active';} ?>">
 			          <a href="service.php">
-			            <i class="fa fa-list-ol"></i> <span>Services</span>
+			            <i class="fa fa-list-ol"></i> <span>Bakery Services</span>
 			          </a>
 			        </li>
 
 
  <li class="treeview <?php if( ($cur_page == 'slider.php') ) {echo 'active';} ?>">
 			          <a href="slider.php">
-			            <i class="fa fa-picture-o"></i> <span>Manage Sliders</span>
+			            <i class="fa fa-picture-o"></i> <span>Featured Bakes</span>
 			          </a>
 			        </li>
 
@@ -141,7 +141,7 @@ if(!isset($_SESSION['user'])) {
 				
 <li class="treeview <?php if( ($cur_page == 'settings.php') ) {echo 'active';} ?>">
 			          <a href="settings.php">
-			            <i class="fa fa-sliders"></i> <span>Website Settings</span>
+			            <i class="fa fa-sliders"></i> <span>Bakery Website Settings</span>
 			          </a>
 			        </li>
 
@@ -156,11 +156,11 @@ if(!isset($_SESSION['user'])) {
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="size.php"><i class="fa fa-circle-o"></i> Size</a></li>
-                            <li><a href="color.php"><i class="fa fa-circle-o"></i> Color</a></li>
-                            <li><a href="country.php"><i class="fa fa-circle-o"></i> Country</a></li>
-                            <li><a href="shipping-cost.php"><i class="fa fa-circle-o"></i> Shipping Cost</a></li>
-                            <li><a href="top-category.php"><i class="fa fa-circle-o"></i> Top Level Category</a></li>
-                            <li><a href="mid-category.php"><i class="fa fa-circle-o"></i> Mid Level Category</a></li>
+                            <li><a href="color.php"><i class="fa fa-circle-o"></i> Decor & Flavou</a></li>
+                            <li><a href="country.php"><i class="fa fa-circle-o"></i> City</a></li>
+                            <li><a href="shipping-cost.php"><i class="fa fa-circle-o"></i> Delivery Charges</a></li>
+                            <li><a href="top-category.php"><i class="fa fa-circle-o"></i> Main Categories</a></li>
+                            <li><a href="mid-category.php"><i class="fa fa-circle-o"></i> Sub-Categories</a></li>
                             <li><a href="end-category.php"><i class="fa fa-circle-o"></i> End Level Category</a></li>
                         </ul>
                     </li>
